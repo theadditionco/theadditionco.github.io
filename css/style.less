@@ -1,0 +1,213 @@
+@import "reset";
+
+@import "vue";
+
+/*----- Variables - Colors -----*/
+
+@lightblue: #C2D5DA;
+@lightblue2: #D9F2FC;
+@lightred: #E8193A;
+@lighttan: #EAE4C6;
+
+/*----- Variable - Font -----*/
+
+@font-family-open-sans: 'Open Sans', sans-serif;
+@font-family-pt-serif: 'PT Serif', serif;
+
+/*----- Variables - Layout ------*/
+
+@page-padding-left-right: 5em;
+@page-padding-top-bottom: 10em;
+
+@page-navigation-left-right-padding: 1em;
+
+/*----- Variables - Typography -----*/
+
+@base-font-size: 20px;
+
+/*----- Global -----*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: @lightblue;
+  transition: background 1s ease;
+  font-family: 'PT Serif', serif;
+  font-size: @base-font-size;
+}
+
+header, footer {
+  display: block;
+}
+
+/* Section */
+
+section .content {
+  display: flex;
+  justify-content: space-between;
+}
+
+section.np {
+  padding: 0;
+}
+
+section.img-c {
+  // TODO Refactor this to not use important
+  display: block !important;
+
+  img {
+    width: 100%;
+  }
+}
+
+section#feature {
+  align-items: center;
+  background-color: @lighttan;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 2em;
+  height: 20em;
+
+  .content {
+    font-size: 2em;
+    font-style: italic;
+    line-height: 1.2em;
+    padding: 1em;
+  }
+}
+
+section#coalition {
+  background-color: @lightblue2;
+  display: block;
+  height: 100%;
+}
+
+section#join-us {
+  background-color: #FFF;
+  padding: 7em 5em;
+
+  .content {
+    justify-content: space-around;
+
+    .contact-group, .job-posting {
+      line-height: 1.5em;
+      padding-bottom: 2em;
+    }
+
+    .contact-group {
+      .contact-label {
+        text-transform: uppercase;
+        font-family: @font-family-open-sans;
+        font-weight: 800;
+      }
+
+      .contact-link {
+        text-decoration: none;
+        font-family: @font-family-pt-serif;
+        font-style: italic;
+
+        a {
+          color: #000;
+        }
+      }
+    }
+
+    .job-posting {
+      .join-us-label {
+        font-weight: bold;
+        font-family: @font-family-open-sans;
+        text-transform: uppercase;
+        padding-bottom: 1em;
+      }
+
+      .job-posting-group {
+        padding-bottom: 1em;
+
+        .job-posting-label {
+          font-family: @font-family-open-sans;
+          font-weight: bold;
+          font-size: 1.1em;
+        }
+
+        .job-posting-location {
+          font-family: @font-family-pt-serif;
+          font-style: italic;
+        }
+      }
+    }
+  }
+}
+
+
+/* Layout */
+
+.container {
+  padding: @page-padding-left-right @page-padding-top-bottom;
+
+  header nav, footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  header {
+    padding-bottom: 1em;
+  }
+
+  nav, #sticky-nav {
+    font-family: @font-family-open-sans;
+    list-style: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    a {
+      color: #000;
+    }
+  }
+
+  nav {
+    line-height: 1.5em;
+
+    .sticky-nav {
+      position: fixed;
+      padding: @page-navigation-left-right-padding*0.75 @page-navigation-left-right-padding;
+      right: @page-padding-left-right * 2;
+      text-align: right;
+    }
+
+    .left-nav {
+      padding-left: @page-navigation-left-right-padding;
+    }
+
+    .right-nav {
+      // TODO Refactor later to be empty block
+      display: block;
+      width: 100px;
+    }
+  }
+
+  #logo img {
+    max-width: 12.5em;
+  }
+
+  .sticky-nav {
+    position: fixed;
+    padding: @page-navigation-left-right-padding*0.75 @page-navigation-left-right-padding;
+    right: @page-padding-left-right * 2;
+    text-align: right;
+  }
+
+  footer .sticky-nav {
+    bottom: 0px;
+    padding-bottom: 1em;
+  }
+}
+
+.btn {
+  background-color: @lightblue;
+  border: none;
+  color: #000;
+  padding: 4em 3em;
+}
